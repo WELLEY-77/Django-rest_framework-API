@@ -1,16 +1,21 @@
-# validando CPF para que ele tenha 11 digitos
+import re
+
+
 def cpf_valido(numero_do_cpf):
+    ''' validando CPF para que ele tenha 11 digitos '''
     return len(numero_do_cpf) == 11
 
-# validando NOME para que ele nao tenha numeros
 def nome_valido(nome):
+    ''' validando NOME para que ele nao tenha numeros '''
     return nome.isalpha()
 
-# validando RG para que ele tenha 9 digitos
 def rg_valido(numero_do_rg):
+    ''' validando RG para que ele tenha 9 digitos '''
     return len(numero_do_rg) == 9
 
-# validando CELULAR para que ele tenha 14 digitos
-def validate_celular(numero_do_celular):
-    return len(numero_do_celular) < 11
+def celular_valido(numero_do_celular):
+    ''' validando CELULAR para que ele tenha o formato de numero certo '''
+    modelo = '[0-9]{2} [0-9]{5}-[0-9]{4}'
+    resposta = re.findall(modelo, numero_do_celular)
+    return resposta
             
