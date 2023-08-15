@@ -1,9 +1,11 @@
 import re
+from validate_docbr import CPF
 
 
 def cpf_valido(numero_do_cpf):
     ''' validando CPF para que ele tenha 11 digitos '''
-    return len(numero_do_cpf) == 11
+    cpf = CPF()
+    return cpf.validate(numero_do_cpf)
 
 def nome_valido(nome):
     ''' validando NOME para que ele nao tenha numeros '''
